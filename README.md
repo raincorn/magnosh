@@ -1,0 +1,2 @@
+# magnosh
+My thoughts
