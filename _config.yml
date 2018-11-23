@@ -10,7 +10,7 @@ title: MAGNOSH
 email: maagnoreiz@gmail.com
 description: Este site tem o próposito de compartilhar meu conhecimento com o público, todos meus pensamentos e assuntos
 do meu interesse, escrito por mim, Magno Reis
-baseurl: /magnosh
+baseurl: "/magnosh"
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: halcance
 github_username:  halcance
