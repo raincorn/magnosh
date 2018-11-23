@@ -1,22 +1,96 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
+    <title>{% if page.title %}{{ page.title}} &middot; {{site.title}}{% else %} {{site.title}}{% endif %} </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/dist/css/docs.css">
+    <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/stylesheets/blog.css">
+    <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/stylesheets/avorent.css">
+    <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/stylesheets/normalize.css">
+ <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/dist/css/docs.min.css.map">
+ <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/dist/css/font-awesome.min.css">
+<link rel="icon" href="{{site.baseurl}}/assets/img/brand/favicon.ico">
+ <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/stylesheets/normalize.css" media="screen">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{site.baseurl}}/assets/js/vendor/jquery.min.js"><\/script>')</script>
+ <script src="{{site.baseurl}}/assets/dist/js/bootstrap.js"></script>
+ {% if page.slug== 404 %}   <style type="text/css" media="screen">
+     body {
+       background-color: #f1f1f1;
+       margin: 0;
+       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+     }
+     hr {
+         margin-top: 20px;
+         margin-bottom: 20px;
+         border: 0;
+         border-top: 1px solid #ccc2c2;
+     }
+     .container { margin: 50px auto 40px auto; width: 600px; text-align: center; }
 
-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+     a { color: #4183c4; text-decoration: none; }
+     a:hover { text-decoration: underline; }
 
-  <!--- <link rel="stylesheet" href="{{ "/css/blog.css" | prepend: site.baseurl }}"> --->
-  <!--- FONT AWESOME CSS --->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <!--- Outros CSS -->
-  <link rel="stylesheet" href="{{ "/js/bootstrap.min.js.map" | prepend: site.baseurl }}">
-    <link rel="stylesheet" href="{{ "/js/bootstrap.bundle.min.js" | prepend: site.baseurl }}">
-      <link rel="stylesheet" href="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}">
-    <link rel="stylesheet" href="{{ "/css/bootstrap-grid.css" | prepend: site.baseurl }}">
-      <link rel="stylesheet" href="{{ "/css/bootstrap.min.css.map" | prepend: site.baseurl }}">
-        <link rel="stylesheet" href="{{ "/css/bootstrap-reboot.css" | prepend: site.baseurl }}">
-      <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+     h1 { font-size: 60px; font-weight: 100; margin: 0px 0 50px 0; text-shadow: 0 1px 0 #fff; }
+     p { color: rgba(0, 0, 0, 0.5); margin: 20px 0; line-height: 1.6; }
+
+     ul { list-style: none; margin: 25px 0; padding: 0; }
+     li { display: table-cell; font-weight: bold; width: 1%; }
+
+     #suggestions {
+       margin-top: 35px;
+       color: #ccc;
+     }
+     #suggestions a {
+       color: #666666;
+       font-weight: 200;
+       font-size: 14px;
+       margin: 0 10px;
+     }
+/* CREATED BY MAGNO REIS AS ALIPSEIGHT FOR RAINCORN/AVORENT */
+.center {
+	text-align: center;
+}
+   </style>
+      {% endif %}
+      {% if page.layout== "build" %}   <style type="text/css" media="screen">
+          body {
+            background-color: #f1f1f1;
+            margin: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          }
+          hr {
+              margin-top: 20px;
+              margin-bottom: 20px;
+              border: 0;
+              border-top: 1px solid #ccc2c2;
+          }
+          .container { margin: 50px auto 40px auto; width: 600px; text-align: center; }
+
+          a { color: #4183c4; text-decoration: none; }
+          a:hover { text-decoration: underline; }
+
+          h1 { font-size: 60px; font-weight: 100; margin: 0px 0 50px 0; text-shadow: 0 1px 0 #fff; }
+          p { color: rgba(0, 0, 0, 0.5); margin: 20px 0; line-height: 1.6; }
+
+          ul { list-style: none; margin: 25px 0; padding: 0; }
+          li { display: table-cell; font-weight: bold; width: 1%; }
+
+          #suggestions {
+            margin-top: 35px;
+            color: #ccc;
+          }
+          #suggestions a {
+            color: #666666;
+            font-weight: 200;
+            font-size: 14px;
+            margin: 0 10px;
+          }
+     /* CREATED BY MAGNO REIS AS ALIPSEIGHT FOR RAINCORN/AVORENT */
+     .center {
+     	text-align: center;
+     }
+        </style>
+           {% endif %}
 </head>
