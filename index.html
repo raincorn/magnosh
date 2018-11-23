@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<div class="container">
+
+<div class="row">
+<h1 class="mt-5">Postagens</h1>
+  </div>
+  <div class="container">
+    {% for post in site.posts %}
+    <div class="card" style="width: 18rem;">
+  {% if post.img %}<img class="card-img-top" src="{{post.img}}" alt="{{post.img}}"> {% endif %}
+  <div class="card-body">
+    <h3 class="card-title">{{post.title}}</h3>
+    <p class="card-text">{{post.excerpt}}</p>
+    <a href="{{post.url}}" class="btn btn-primary">Ler post</a>
+  </div>
+</div>
+{% endfor %}
+</div>
+  <p class="rss-subscribe">Inscreva-se <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
